@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GK Study Portal - Romantic Chat App</title>
+    <style>
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      @keyframes slide-in-right {
+        from { opacity: 0; transform: translateX(20px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      
+      @keyframes slide-in-left {
+        from { opacity: 0; transform: translateX(-20px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      
+      .animate-fade-in {
+        animation: fade-in 0.3s ease-out;
+      }
+      
+      .animate-slide-in-right {
+        animation: slide-in-right 0.3s ease-out;
+      }
+      
+      .animate-slide-in-left {
+        animation: slide-in-left 0.3s ease-out;
+      }
+      
+      .animation-delay-1000 {
+        animation-delay: 1s;
+      }
+      
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+      
+      .animation-delay-3000 {
+        animation-delay: 3s;
+      }
+      
+      /* Ensure message bubbles are responsive */
+      .message-bubble {
+        max-width: 80vw;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+      }
+      
+      @media (min-width: 640px) {
+        .message-bubble {
+          max-width: 320px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
