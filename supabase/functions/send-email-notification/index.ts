@@ -81,15 +81,16 @@ Deno.serve(async (req: Request) => {
 
     // Send email using EmailJS service
     const emailData = {
-      service_id: 'service_gk_study',
-      template_id: 'template_message_notification',
-      user_id: 'your_emailjs_user_id', // Replace with actual EmailJS user ID
+      service_id: 'service_o897y5t',
+      template_id: 'template_message_notification', // You'll need to create this template
+      user_id: 'bKbS9L0kF8g2CSGP-',
       template_params: {
         to_email: 'vishwalavanya04@gmail.com',
         from_name: 'Ammu',
         message: messageText.substring(0, 100) + (messageText.length > 100 ? '...' : ''),
         timestamp: timestamp,
-        subject: 'New message from Ammu - GK Study Portal'
+        subject: 'New message from Ammu - GK Study Portal',
+        to_name: 'Vishwa'
       }
     };
 
