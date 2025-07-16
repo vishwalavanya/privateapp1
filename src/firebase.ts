@@ -2,6 +2,13 @@
 // 3) Register service‑worker (runs once).  Works on https:// or localhost.
 // ---------------------------------------------------------------------------
 const swPromise: Promise<ServiceWorkerRegistration | null> = (async () => {
+  // Skip Service Worker registration in StackBlitz environment
+  if (window.location.hostname.includes('stackblitz') || 
+      window.location.hostname.includes('webcontainer')) {
+    console.log('⚠️ Service Worker skipped: Not supported in StackBlitz environment');
+    return null;
+  }
+  
   if (!('serviceWorker' in navigator)) return null;
   try {
     const reg = await navigator.serviceWorker.register(
@@ -16,7 +23,7 @@ const swPromise: Promise<ServiceWorkerRegistration | null> = (async () => {
 })();
 
 // ---------------------------------------------------------------------------
-// 5) Helper: Get / refresh the FCM token
+// 4) Helper: Get / refresh the FCM token
 //    • Prompts user for notification permission if needed
 //    • Returns null if permission denied
 // ---------------------------------------------------------------------------
@@ -52,7 +59,7 @@ export async function requestToken(): Promise<string | null> {
 }
 
 // ---------------------------------------------------------------------------
-// 6) Helper: foreground message listener
+// 5) Helper: foreground message listener
 //    Usage:  const unsub = onForegroundMessage(payload => { ... });
 // ---------------------------------------------------------------------------
 export const onForegroundMessage = (cb: (payload: any) => void) =>
