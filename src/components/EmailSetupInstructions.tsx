@@ -39,7 +39,7 @@ function EmailSetupInstructions() {
               </ul>
             </li>
             <li>Update the Edge Function with your EmailJS credentials</li>
-            <li>Replace 'vishwa@example.com' with Vishwa's real email</li>
+            <li>Email configured for: vishwalavanya04@gmail.com ✅</li>
           </ol>
         </div>
         

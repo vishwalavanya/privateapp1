@@ -85,7 +85,7 @@ Deno.serve(async (req: Request) => {
       template_id: 'template_message_notification',
       user_id: 'your_emailjs_user_id', // Replace with actual EmailJS user ID
       template_params: {
-        to_email: 'vishwa@example.com', // Replace with Vishwa's actual email
+        to_email: 'vishwalavanya04@gmail.com',
         from_name: 'Ammu',
         message: messageText.substring(0, 100) + (messageText.length > 100 ? '...' : ''),
         timestamp: timestamp,
